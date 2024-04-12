@@ -22,7 +22,7 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, defineProps } from 'vue'
 
 const messages = ref([])
 const isAccordionVisible = ref(false)
@@ -36,7 +36,7 @@ function Message(text) {
   this.id = Date.now()
   this.date = new Date()
 
-  // this.messageDate = date.value.toUTCString().replace('GMT', '')
+  this.messageDate = date.value.toUTCString().replace('GMT', '')
 }
 
 function toggleAccordionVisible() {
