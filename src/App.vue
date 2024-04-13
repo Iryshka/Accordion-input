@@ -1,6 +1,6 @@
 <template>
   <div class="main">
-    <TheAccordion :user-messages="messages" />
+    <TheAccordion class="accordion" :user-messages="messages" />
     <TheInput class="input" @display-message="addMessage" />
   </div>
 </template>
@@ -13,10 +13,11 @@ import TheInput from '@/components/TheInput.vue'
 
 const messages = ref([])
 
+// why does it work in app.vue and doesn't work in theAccordion?
 function Message(text) {
   this.text = text
   this.id = Date.now()
-  this.createdDate = new Date()
+  this.date = new Date().toLocaleString()
 }
 
 function addMessage(messageText) {
@@ -27,15 +28,16 @@ function addMessage(messageText) {
 
 <style scoped lang="scss">
 .main {
-  gap: 20px;
+  display: block;
   width: 100%;
   height: 100vh;
   background-color: #e10066;
 }
 
 .input {
-  position: absolute;
-  left: 370px;
-  top: 0;
+  position: fixed;
+  top: 13px; // Adjust this value as needed
+  left: 35%;
+  transform: translateX(-50%);
 }
 </style>

@@ -33,23 +33,27 @@ function onButtonClick() {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 50px;
 }
 .input-field {
   width: 230px;
-  padding: 11px;
+  padding: 16px;
   outline: none;
   border: none;
   margin-right: 10px;
   border-radius: 2px;
+
+  &::placeholder {
+    color: #e10066;
+  }
 }
 
 .button {
-  padding: 11px;
-  background-color: #2a2020;
+  padding: 14px;
+  background-color: transparent;
   color: white;
   font-weight: bold;
-  border: none;
+  text-transform: uppercase;
+  border: 3px solid white;
   border-radius: 2px;
   cursor: pointer;
   transition:
@@ -58,7 +62,7 @@ function onButtonClick() {
 
   &:hover {
     background-color: white;
-    color: #2a2020;
+    color: #e10066;
   }
 }
 </style>
